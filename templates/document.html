@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Churn Prediction API Documentation</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        .container {
+            max-width: 1200px;
+        }
+        .content {
+            max-height: 80vh; /* Adjust based on your needs */
+            overflow-y: auto;
+            padding-right: 15px; /* Ensure scrollbar doesn't overlap content */
+        }
+        table {
+            width: 100%;
+            margin-bottom: 1rem;
+            background-color: transparent;
+            overflow-x: auto;
+            display: block;
+        }
+        th, td {
+            padding: 0.75rem;
+            vertical-align: top;
+            border-top: 1px solid #dee2e6;
+        }
+        th {
+            vertical-align: bottom;
+            border-bottom: 2px solid #dee2e6;
+        }
+        pre {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            overflow: auto;
+        }
+        .highlight {
+            background-color: #e7f0ff;
+            border: 1px solid #b3d7ff;
+            padding: 5px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="display-4">Churn Prediction API Documentation</h1>
+        <p class="lead">This documentation will guide you on how to use the Churn Prediction API.</p>
+
+        <div class="content">
+            <h2>Overview</h2>
+            <p>The Churn Prediction API allows you to upload a CSV file containing customer data and receive predictions on which customers are likely to churn (leave). This API helps businesses identify at-risk customers and take necessary actions to retain them.</p>
+
+            <h2>Base URL</h2>
+            <p class="highlight"><code>https://apiofchurnprediction.onrender.com/api/v1/churnprediction</code></p>
+
+            <h2>Request Method</h2>
+            <p><strong>POST</strong></p>
+
+            <h2>Request</h2>
+            <h3>Headers</h3>
+            <p><strong>Content-Type</strong>: <code>multipart/form-data</code> (This is automatically set when you upload a file in Postman)</p>
+
+            <h3>Body</h3>
+            <p><strong>Key</strong>: <code>File</code></p>
+            <p><strong>Type</strong>: <code>File</code></p>
+            <p><strong>Value</strong>: Choose your CSV file</p>
+
+            <h2>CSV File Format</h2>
+            <p>Your CSV file should have the following columns:</p>
+            <ul>
+                <li><strong>CustomerID</strong>: Unique identifier for each customer.</li>
+                <li><strong>Churn</strong>: Binary value indicating if the customer has churned (1) or not (0).</li>
+                <li><strong>Tenure</strong>: Number of months the customer has been with the company.</li>
+                <li><strong>PreferredLoginDevice</strong>: Device preferred by the customer for logging in (e.g., Laptop, Phone).</li>
+                <li><strong>CityTier</strong>: City tier where the customer resides (e.g., 1, 2, 3).</li>
+                <li><strong>WarehouseToHome</strong>: Distance from warehouse to home in kilometers.</li>
+                <li><strong>PreferredPaymentMode</strong>: Payment mode preferred by the customer (e.g., Credit Card, Cash on Delivery).</li>
+                <li><strong>Gender</strong>: Gender of the customer (e.g., Male, Female).</li>
+                <li><strong>HourSpendOnApp</strong>: Number of hours spent on the app by the customer.</li>
+                <li><strong>NumberOfDeviceRegistered</strong>: Number of devices registered by the customer.</li>
+                <li><strong>PreferedOrderCat</strong>: Preferred category of orders (e.g., Home & Kitchen, Electronics).</li>
+                <li><strong>SatisfactionScore</strong>: Customer satisfaction score (1-10).</li>
+                <li><strong>MaritalStatus</strong>: Marital status of the customer (e.g., Single, Married).</li>
+                <li><strong>NumberOfAddress</strong>: Number of addresses registered by the customer.</li>
+                <li><strong>Complain</strong>: Number of complaints made by the customer.</li>
+                <li><strong>OrderAmountHikeFromlastYear</strong>: Hike in order amount from the last year.</li>
+                <li><strong>CouponUsed</strong>: Number of coupons used by the customer.</li>
+                <li><strong>OrderCount</strong>: Total number of orders placed by the customer.</li>
+                <li><strong>DaySinceLastOrder</strong>: Number of days since the last order was placed.</li>
+                <li><strong>CashbackAmount</strong>: Amount of cashback received by the customer.</li>
+            </ul>
+
+            <p><strong>Example CSV File:</strong></p>
+            <div style="overflow-x: auto;">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>CustomerID</th>
+                            <th>Churn</th>
+                            <th>Tenure</th>
+                            <th>PreferredLoginDevice</th>
+                            <th>CityTier</th>
+                            <th>WarehouseToHome</th>
+                            <th>PreferredPaymentMode</th>
+                            <th>Gender</th>
+                            <th>HourSpendOnApp</th>
+                            <th>NumberOfDeviceRegistered</th>
+                            <th>PreferedOrderCat</th>
+                            <th>SatisfactionScore</th>
+                            <th>MaritalStatus</th>
+                            <th>NumberOfAddress</th>
+                            <th>Complain</th>
+                            <th>OrderAmountHikeFromlastYear</th>
+                            <th>CouponUsed</th>
+                            <th>OrderCount</th>
+                            <th>DaySinceLastOrder</th>
+                            <th>CashbackAmount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>3</td>
+                            <td>Laptop</td>
+                            <td>1</td>
+                            <td>15</td>
+                            <td>Credit Card</td>
+                            <td>Female</td>
+                            <td>4</td>
+                            <td>2</td>
+                            <td>Home & Kitchen</td>
+                            <td>9</td>
+                            <td>Single</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>7.175654756</td>
+                            <td>6</td>
+                            <td>23</td>
+                            <td>19</td>
+                            <td>80.36720769</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>1</td>
+                            <td>7</td>
+                            <td>Phone</td>
+                            <td>1</td>
+                            <td>19</td>
+                            <td>Cash on Delivery</td>
+                            <td>Male</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>Electronics</td>
+                            <td>7</td>
+                            <td>Single</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>42.79468723</td>
+                            <td>7</td>
+                            <td>7</td>
+                            <td>22</td>
+                            <td>18.65700589</td>
+                        </tr>
+                        <!-- Add more rows as needed -->
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Response</h2>
+            <p>The API will respond with a JSON object that contains:</p>
+            <ul>
+                <li><strong>data</strong>: The processed data with churn predictions.</li>
+                <li><strong>churn_customers</strong>: List of customers predicted to churn.</li>
+                <li><strong>message</strong>: A summary message about the churn predictions.</li>
+                <li><strong>churn_message</strong>: Detailed message about customers predicted to churn.</li>
+            </ul>
+
+            <p><strong>Example Response:</strong></p>
+            <div style="overflow: auto;">
+                <pre><code>
+{
+    "churn_customers": [
+        {
+            "CustomerID": 1,
+            "Prediction": 1
+        },
+        {
+            "CustomerID": 2,
+            "Prediction": 1
+        },
+        {
+            "CustomerID": 5,
+            "Prediction": 1
+        }
+
+    ],
+    "churn_message": "Customers predicted to churn (CustomerID): 1, 2, 5. These customers should be targeted for enhanced offers to improve retention.",
+    "data": [
+        {
+            "CityTier": 1,
+            "CustomerID": 1,
+            "HourSpendOnApp": 4,
+            "NumberOfDeviceRegistered": 2,
+            "Prediction": 1,
+            "Tenure": 3,
+            "WarehouseToHome": 15
+        },
+        {
+            "CityTier": 1,
+            "CustomerID": 2,
+            "HourSpendOnApp": 2,
+            "NumberOfDeviceRegistered": 3,
+            "Prediction": 1,
+            "Tenure": 7,
+            "WarehouseToHome": 19
+        },
+        {
+            "CityTier": 1,
+            "CustomerID": 3,
+            "HourSpendOnApp": 6,
+            "NumberOfDeviceRegistered": 4,
+            "Prediction": 0,
+            "Tenure": 11,
+            "WarehouseToHome": 12
+        }
+    ],
+    "message": "Out of 10 customers, 5 are predicted to churn (not continue with the business) and 5 are predicted to continue with the business. The majority of customers are predicted to stay, which is a positive sign."
+}
+                </code></pre>
+            </div>
+
+            <h2>Error Handling</h2>
+            <p>If there's an issue with your request, you will receive an error message. Here are some common errors:</p>
+            <ul>
+                <li><strong>No file part in the request</strong>: You didn't include a file in your request.</li>
+                <li><strong>No selected file</strong>: You didn't select a file for upload.</li>
+                <li><strong>CSV file missing required columns</strong>: Your CSV file doesn’t include all the necessary columns.</li>
+                <li><strong>Invalid file type. Only CSV files are supported</strong>: The uploaded file is not a CSV.</li>
+            </ul>
+
+            <p><strong>Example Error Response:</strong></p>
+            <div style="overflow: auto;">
+                <pre><code>
+{
+    "error": "CSV file missing required columns"
+}
+                </code></pre>
+            </div>
+
+            <h2>Notes</h2>
+            <p>Make sure your CSV file contains all the required columns and is in the correct format.</p>
+            <p><b>The API caches responses for 60 seconds to improve performance. If you upload the same file within this time, you might get a cached response.</b></p>
+
+            <h2>Testing the API</h2>
+            <p>To test the API, you can use tools like Postman:</p>
+            <ol>
+                <li><strong>Open Postman</strong>.</li>
+                <li><strong>Create a new POST request</strong>.</li>
+                <li><strong>Enter the URL</strong>: <span class="highlight"><code>https://apiofchurnprediction.onrender.com/api/v1/churnprediction</code></span>.</li>
+                <li><strong>In the Body tab</strong>, select <code>form-data</code> and upload your CSV file with the key <code>File</code>.</li>
+                <li><strong>Send the request</strong> and check the response.</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

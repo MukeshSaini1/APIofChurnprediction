@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import pickle
 import pandas as pd
 import logging
@@ -137,6 +137,10 @@ def upload():
 
     logger.error("Invalid file type. Only CSV files are supported.")
     return jsonify({'error': 'Invalid file type. Only CSV files are supported.'}), 400
+
+@app.route('/')
+def document():
+    return render_template('document.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
