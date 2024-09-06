@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30f29d3f-d315-4d8e-8f4d-af09e2b49c5c" name="Changes" comment="initial commit">
+    <list default="true" id="30f29d3f-d315-4d8e-8f4d-af09e2b49c5c" name="Changes" comment="documentation commit">
       <change afterPath="$PROJECT_DIR$/churnexample_data_tuned.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/document.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/testscript.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/document.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/document.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,12 +82,21 @@
       <option name="project" value="LOCAL" />
       <updated>1725607217659</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="documentation commit">
+      <option name="closed" value="true" />
+      <created>1725609904163</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1725609904163</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <MESSAGE value="documentation commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="documentation commit" />
   </component>
 </project>
